@@ -1,0 +1,11 @@
+default: &default
+  dataset_id: "costarica-asit"
+
+  development:
+  <<: *default
+
+production:
+  <<: *default
+
+test:
+  <<: *default

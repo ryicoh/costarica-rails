@@ -43,6 +43,18 @@ class Chef
     from_entity entities.first if entities.any?
   end
 
+  def self.find_by_user_id user_id
+    query = dataset.query("Chef").where("user_id", "=", user_id)
+    entities = dataset.run query
+    from_entity entities.first if entities.any?
+  end
+
+  def self.find_by_group_id group_id
+    query = dataset.query("Chef").where("group_id", "=", group_id)
+    entities = dataset.run query
+    entities
+  end
+
   include ActiveModel::Model
 
   def save

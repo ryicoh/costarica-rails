@@ -54,6 +54,13 @@ class Chef
     entities = dataset.run query
     entities
   end
+  
+  def self.find_by_user_id_and_group_id user_id, group_id
+    query = dataset.query("Chef").where("user_id", "=", user_id).
+                                  where("group_id", "=", group_id)
+    entities = dataset.run query
+    from_entity entities.first if entities.any?
+  end
 
   include ActiveModel::Model
 

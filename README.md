@@ -1,24 +1,16 @@
-# README
+# costarica
+LINEグループ上で料理当番を管理するボットです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Google App Engineでデプロイできますよ！！
 
-Things you may want to cover:
+# デプロイ方法
+- Cloud SQLのインスタンスを作成
 
-* Ruby version
+- LINEのMessaging APIの登録
 
-* System dependencies
+- cp app-sample.yaml app.yaml
 
-* Configuration
+Cloud SQLのインスタンスとLINEのMessaging APIの設定を書く
+- vi app.yaml
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- $ gcloud app deploy
